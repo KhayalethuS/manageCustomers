@@ -31,7 +31,7 @@ exports.create = (req, res) => {
   
 };
 
-exports.index = (req, res) => {
+exports.index = (res) => {
   Customer.index((err, data) => {
     if (err)
       res.status(500).send({
