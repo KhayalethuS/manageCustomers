@@ -22,7 +22,11 @@ exports.create = (req, res) => {
         message:
           err.message || "Something went wrong please try again, if error persist contact our support team."
       });
-    else res.send(data);
+    else
+    res.setHeader("Access-Control-Allow-Origin", "*")
+    res.setHeader("Access-Control-Allow-Credentials", "true")
+    res.setHeader("Access-Control-Allow-Headers", "content-type")
+    res.send(data);
   });
   
 };
@@ -34,6 +38,10 @@ exports.index = (req, res) => {
         message:
           err.message || "Something went wrong please try again, if error persist contact our support team."
       });
-    else res.send(data);
+    else 
+    res.setHeader("Access-Control-Allow-Origin", "*")
+    res.setHeader("Access-Control-Allow-Credentials", "true")
+    res.setHeader("Access-Control-Allow-Headers", "content-type")
+    res.send(data) ;
   });
 };
